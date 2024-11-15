@@ -1,4 +1,4 @@
-package com.globant;
+package com.globant.tests;
 
 import static org.junit.Assert.assertTrue;
 

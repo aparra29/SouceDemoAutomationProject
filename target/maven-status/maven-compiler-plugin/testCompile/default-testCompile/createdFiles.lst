@@ -1,1 +1,8 @@
-com\globant\AppTest.class
+com\globant\pages\LoginPage.class
+com\globant\tests\AppTest.class
+com\globant\tests\BaseTest.class
+com\globant\pages\CheckoutPage.class
+com\globant\pages\BasePage.class
+com\globant\tests\SauceDemoTests.class
+com\globant\pages\ProductsPage.class
+com\globant\pages\CartPage.class
