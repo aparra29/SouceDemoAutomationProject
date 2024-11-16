@@ -24,15 +24,15 @@ cd SouceDemoAutomationProject
 
 Install the necessary dependencies
 
-´´´
+```
 mvn clean install
-´´´
+```
 
 ## Running tests 
 
 To run the tests, execute the following command inside the project directory
 
-´´´
+```
 mvn clean test
-´´´
+```
 
