@@ -36,6 +36,20 @@ jobs:
         distribution: 'temurin'
         server-id: github # Value of the distributionManagement/repository/id field of the pom.xml
         settings-path: ${{ github.workspace }} # location for the settings.xml file
+        
+    - name: Setup Chrome
+      uses: browser-actions/setup-chrome@latest
+
+    - name: Install Chrome
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y google-chrome-stable
+
+    - name: Check Chrome Version
+      run: google-chrome --version
+
+    - name: Setup ChromeDriver
+      uses: nanasess/setup-chromedriver@master
 
     - name: Build with Maven
       id: build
