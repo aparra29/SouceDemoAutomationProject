@@ -14,8 +14,12 @@ public class BaseTest {
     @BeforeMethod
     public void setUp() {
         ChromeOptions options = new ChromeOptions();
-        options.addArguments("--headless=new");
+        options.addArguments("--headless");
+        options.addArguments("--no-sandbox");
+        options.addArguments("--disable-dev-shm-usage");
         options.addArguments("--remote-debugging-port=9222");
+        options.addArguments("--disable-gpu");
+        options.addArguments("--disable-software-rasterizer");
 
         driver = new ChromeDriver();
         //driver.manage().window().maximize();
