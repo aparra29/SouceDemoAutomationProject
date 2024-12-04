@@ -21,7 +21,7 @@ public class BaseTest {
         options.addArguments("--disable-gpu");
         options.addArguments("--disable-software-rasterizer");
 
-        driver = new ChromeDriver();
+        driver = new ChromeDriver(options);
         //driver.manage().window().maximize();
         driver.get("https://www.saucedemo.com");
         loginPage = new LoginPage(driver);
