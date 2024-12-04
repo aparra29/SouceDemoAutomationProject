@@ -81,6 +81,14 @@ jobs:
         gh_pages: gh-pages
         allure_report: allure-report
         allure_history: allure-history
+    
+    - name: Checkout repository
+      uses: actions/checkout@v4
+    - name: Check for changes
+      run: |
+        git status
+        git diff --exit-code || echo "There are uncommitted changes"
+
 
     - name: Deploy report to Github Pages
       if: success()
