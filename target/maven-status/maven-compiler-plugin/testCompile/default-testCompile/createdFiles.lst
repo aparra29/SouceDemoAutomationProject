@@ -1,5 +1,4 @@
 com\globant\pages\LoginPage.class
-com\globant\tests\AppTest.class
 com\globant\tests\BaseTest.class
 com\globant\pages\CheckoutPage.class
 com\globant\pages\BasePage.class

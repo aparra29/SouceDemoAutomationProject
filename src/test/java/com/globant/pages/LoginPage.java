@@ -3,6 +3,7 @@ package com.globant.pages;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import io.qameta.allure.Step;
 
 public class LoginPage extends BasePage {
     @FindBy(id = "user-name")
@@ -18,6 +19,7 @@ public class LoginPage extends BasePage {
         super(driver);
     }
 
+    @Step("Logs in with given credentials")
     public ProductsPage login(String username, String password) {
         usernameInput.sendKeys(username);
         passwordInput.sendKeys(password);

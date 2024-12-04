@@ -4,7 +4,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-
+import io.qameta.allure.Step;
 import java.util.List;
 
 public class CartPage extends BasePage {
@@ -31,6 +31,7 @@ public class CartPage extends BasePage {
         return cartItems.isEmpty();
     }
 
+    @Step("Proceed to checkout")
     public CheckoutPage proceedToCheckout() {
         wait.until(ExpectedConditions.elementToBeClickable(checkoutButton));
         checkoutButton.click();

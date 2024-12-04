@@ -6,12 +6,21 @@ import com.globant.pages.ProductsPage;
 import com.globant.pages.CartPage;
 import com.globant.pages.CheckoutPage;
 import com.globant.pages.LoginPage;
+import io.qameta.allure.Description;
+import io.qameta.allure.Epic;
+import io.qameta.allure.Feature;
+import io.qameta.allure.Severity;
+import io.qameta.allure.SeverityLevel;
 
+@Epic("E-Commerce platform")
+@Feature("Basic login and shopping cart functionality")
 public class SauceDemoTests extends BaseTest {
     private static final String USERNAME = "standard_user";
     private static final String PASSWORD = "secret_sauce";
 
     @Test
+    @Description("Verify user can successfully log in, add products to cart, and complete a purchase")
+    @Severity(SeverityLevel.CRITICAL)
     public void testCompletePurchase() {
         ProductsPage productsPage = loginPage.login(USERNAME, PASSWORD);
         productsPage.addRandomProductToCart();
@@ -27,6 +36,8 @@ public class SauceDemoTests extends BaseTest {
     }
 
     @Test
+    @Description("Verify user can remove items from their shopping cart")
+    @Severity(SeverityLevel.NORMAL)
     public void testRemoveCartItems() {
         ProductsPage productsPage = loginPage.login(USERNAME, PASSWORD);
         productsPage.addMultipleProductsToCart(3);
@@ -39,6 +50,8 @@ public class SauceDemoTests extends BaseTest {
     }
 
     @Test
+    @Description("Verify user can log out successfully")
+    @Severity(SeverityLevel.CRITICAL)
     public void testLogout() {
         ProductsPage productsPage = loginPage.login(USERNAME, PASSWORD);
         LoginPage loginPageAfterLogout = productsPage.logout();

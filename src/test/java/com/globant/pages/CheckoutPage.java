@@ -4,6 +4,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import io.qameta.allure.Step;
 
 public class CheckoutPage extends BasePage {
     @FindBy(id = "first-name")
@@ -28,6 +29,7 @@ public class CheckoutPage extends BasePage {
         super(driver);
     }
 
+    @Step("Fill out shipping info")
     public void fillShippingInfo(String firstName, String lastName, String postalCode) {
         wait.until(ExpectedConditions.visibilityOf(firstNameInput));
         firstNameInput.sendKeys(firstName);
@@ -36,6 +38,7 @@ public class CheckoutPage extends BasePage {
         continueButton.click();
     }
 
+    @Step("Complete purchase")
     public void completePurchase() {
         finishButton.click();
     }
